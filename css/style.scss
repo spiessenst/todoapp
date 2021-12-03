@@ -19,8 +19,41 @@ main {
   position: relative;
   background-color: $green;
   border-radius: 10px;
-  min-height: 75px;
+  padding: 20px;
   margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+  @extend %placeholdertextcolor;
+
+  &__input {
+    border: none;
+    border-radius: 10px;
+    height: 65px;
+    width: 470px;
+    padding-left: 30px;
+    padding-right: 60px;
+    background-color: $light-green;
+    color: white;
+    font-size: 14px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+  &__submit {
+    position: absolute;
+    border-radius: 50%;
+    height: 65px;
+    width: 65px;
+    border: none;
+    right: 40px;
+    cursor: pointer;
+    &::before {
+      font-family: icons;
+      content: "\e000";
+      font-size: 30px;
+      color: $green;
+    }
+  }
 }
 
 .list {

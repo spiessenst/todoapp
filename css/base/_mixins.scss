@@ -1,6 +1,7 @@
 @mixin make-cols($basis: 300px, $gap: 10px) {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: $gap;
 
   > * {

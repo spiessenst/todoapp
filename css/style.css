@@ -142,6 +142,21 @@ html {
   box-sizing: border-box;
 }
 
+.form ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1;
+  /* Firefox */
+}
+.form :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+.form ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
+
 @font-face {
   font-family: "icons";
   src: url("icons/fonts/icons.ttf?u7jed7") format("truetype"), url("icons/fonts/icons.woff?u7jed7") format("woff"), url("icons/fonts/icons.svg?u7jed7#icons") format("svg");
@@ -194,12 +209,38 @@ main {
   position: relative;
   background-color: #19ba99;
   border-radius: 10px;
-  min-height: 75px;
+  padding: 20px;
   margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
 }
-.form input,
-.form button {
-  display: none;
+.form__input {
+  border: none;
+  border-radius: 10px;
+  height: 65px;
+  width: 470px;
+  padding-left: 30px;
+  padding-right: 60px;
+  background-color: #65c4ae;
+  color: white;
+  font-size: 14px;
+}
+.form__input:focus {
+  outline: none;
+}
+.form__submit {
+  position: absolute;
+  border-radius: 50%;
+  height: 65px;
+  width: 65px;
+  border: none;
+  right: 40px;
+  cursor: pointer;
+}
+.form__submit::before {
+  font-family: icons;
+  content: "\e000";
+  font-size: 30px;
+  color: #19ba99;
 }
 
 .list__item {
