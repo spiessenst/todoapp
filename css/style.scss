@@ -13,6 +13,7 @@ main {
   width: 90%;
   margin: 20px auto;
   max-width: 550px;
+  font-family: "Roboto", sans-serif;
 }
 
 .form {
@@ -21,14 +22,16 @@ main {
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
-  font-family: "Roboto", sans-serif;
+  display: flex;
+
   @extend %placeholdertextcolor;
+  @extend %shadow;
 
   &__input {
     border: none;
     border-radius: 10px;
     height: 65px;
-    width: 470px;
+    width: 490px;
     padding-left: 30px;
     padding-right: 60px;
     background-color: $light-green;
@@ -41,11 +44,12 @@ main {
   }
   &__submit {
     position: absolute;
+    flex-shrink: 0;
     border-radius: 50%;
     height: 65px;
     width: 65px;
     border: none;
-    right: 40px;
+    right: 20px;
     cursor: pointer;
     &::before {
       font-family: icons;
@@ -57,9 +61,54 @@ main {
 }
 
 .list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
   &__item {
+    @extend %shadow;
+    position: relative;
+    font-size: 16px;
+    color: $black;
+    padding: 20px;
     min-height: 20px;
     background-color: $white;
     margin-bottom: 12px;
+    border-radius: 10px;
+    width: 95%;
+    align-self: center;
+    display: flex;
+
+    &__text {
+      padding-left: 14px;
+    }
+    &__button {
+      position: absolute;
+      border: none;
+      background-color: white;
+      align-self: center;
+
+      cursor: pointer;
+      &--remove {
+        border-right: $grey solid 1.5px;
+        padding-right: 25px;
+        right: 70px;
+        &:after {
+          font-family: icons;
+          font-size: 20px;
+          content: "\e001";
+          color: $grey;
+        }
+      }
+      &--check {
+        right: 20px;
+        &:after {
+          font-family: icons;
+          font-size: 20px;
+          content: "\e002";
+          color: $grey;
+        }
+      }
+    }
   }
 }
