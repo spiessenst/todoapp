@@ -1,6 +1,6 @@
 @use "./base/reset";
 @use "./base/extends";
-@use "./base/fonts";
+@use "./base/fonts" as *;
 @use "./base/mixins" as *;
 @use "./base/variables" as *;
 @use "./icons/icons";
@@ -29,18 +29,15 @@ main {
 
   &__input {
     border: none;
-    border-radius: 10px;
+    border-radius: 7px 0px 0px 7px;
     height: 65px;
-    width: 97%;
+    width: calc(100% - 32.5px);
     padding-left: 30px;
     padding-right: 60px;
     background-color: $light-green;
     color: white;
-    font-size: 14px;
-
-    &:focus {
-      outline: none;
-    }
+    font-size: 20px;
+    outline: none;
   }
   &__submit {
     position: absolute;
@@ -50,12 +47,19 @@ main {
     width: 65px;
     border: none;
     right: 20px;
+    top: 20px;
     cursor: pointer;
-    &::before {
+    &:before {
       font-family: icons;
       content: "\e000";
-      font-size: 30px;
+      font-size: 28px;
       color: $green;
+    }
+  }
+
+  &--error {
+    .form__input {
+      background-color: $red;
     }
   }
 }
@@ -79,21 +83,46 @@ main {
     align-self: center;
     display: flex;
 
+    &--checked {
+      text-decoration: line-through;
+      text-decoration-color: $green;
+      text-decoration-thickness: 2px;
+
+      .list__item__button--check {
+        &:before {
+          content: "\e003";
+          color: $green;
+        }
+      }
+    }
+
     &__text {
       padding-left: 14px;
     }
     &__button {
-      position: absolute;
       border: none;
       background-color: white;
       align-self: center;
-
       cursor: pointer;
+      position: absolute;
+
       &--remove {
-        border-right: $grey solid 1.5px;
-        padding-right: 25px;
+        padding-right: 20px;
         right: 70px;
+        &:hover {
+          &:before {
+            color: $red;
+          }
+        }
         &:after {
+          position: absolute;
+          content: "|";
+          font-size: 22px;
+          color: $grey;
+          left: 45px;
+          top: -1px;
+        }
+        &:before {
           font-family: icons;
           font-size: 20px;
           content: "\e001";
@@ -102,7 +131,8 @@ main {
       }
       &--check {
         right: 20px;
-        &:after {
+
+        &:before {
           font-family: icons;
           font-size: 20px;
           content: "\e002";

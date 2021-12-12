@@ -144,17 +144,17 @@ html {
 
 .form ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   opacity: 1;
   /* Firefox */
 }
 .form :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
 }
 .form ::-ms-input-placeholder {
   /* Microsoft Edge */
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .form, .list__item {
@@ -220,16 +220,14 @@ main {
 }
 .form__input {
   border: none;
-  border-radius: 10px;
+  border-radius: 7px 0px 0px 7px;
   height: 65px;
-  width: 97%;
+  width: calc(100% - 32.5px);
   padding-left: 30px;
   padding-right: 60px;
   background-color: #65c4ae;
   color: white;
-  font-size: 14px;
-}
-.form__input:focus {
+  font-size: 20px;
   outline: none;
 }
 .form__submit {
@@ -240,13 +238,17 @@ main {
   width: 65px;
   border: none;
   right: 20px;
+  top: 20px;
   cursor: pointer;
 }
-.form__submit::before {
+.form__submit:before {
   font-family: icons;
   content: "\e000";
-  font-size: 30px;
+  font-size: 28px;
   color: #19ba99;
+}
+.form--error .form__input {
+  background-color: #f17477;
 }
 
 .list {
@@ -267,22 +269,41 @@ main {
   align-self: center;
   display: flex;
 }
+.list__item--checked {
+  text-decoration: line-through;
+  text-decoration-color: #19ba99;
+  text-decoration-thickness: 2px;
+}
+.list__item--checked .list__item__button--check:before {
+  content: "\e003";
+  color: #19ba99;
+}
 .list__item__text {
   padding-left: 14px;
 }
 .list__item__button {
-  position: absolute;
   border: none;
   background-color: white;
   align-self: center;
   cursor: pointer;
+  position: absolute;
 }
 .list__item__button--remove {
-  border-right: #cbd5d2 solid 1.5px;
-  padding-right: 25px;
+  padding-right: 20px;
   right: 70px;
 }
+.list__item__button--remove:hover:before {
+  color: #f17477;
+}
 .list__item__button--remove:after {
+  position: absolute;
+  content: "|";
+  font-size: 22px;
+  color: #cbd5d2;
+  left: 45px;
+  top: -1px;
+}
+.list__item__button--remove:before {
   font-family: icons;
   font-size: 20px;
   content: "\e001";
@@ -291,7 +312,7 @@ main {
 .list__item__button--check {
   right: 20px;
 }
-.list__item__button--check:after {
+.list__item__button--check:before {
   font-family: icons;
   font-size: 20px;
   content: "\e002";
