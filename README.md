@@ -1,3 +1,3 @@
 # todoapp
 
-https://todolist-spiessenst.surge.sh/
+https://todoapp_syntra_thomas.surge.sh/
