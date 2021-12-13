@@ -1,0 +1,29 @@
+{
+  "name": "todoapp",
+  "version": "1.0.0",
+  "description": "een toto app syntra",
+  "main": "index.js",
+  "scripts": {
+    "css:prod": "sass ./css/style.scss ./css/style.css -s compressed --no-source-map",
+    "css:dev": "sass ./css/style.scss ./css/style.css -w",
+    "deploy": "surge ./ --domain https://todoapp_syntra_thomas.surge.sh"
+    },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spiessenst/todoapp.git"
+  },
+  "keywords": [
+    "todo",
+    "app",
+    "js",
+    "vanilla",
+    "css",
+    "scss"
+  ],
+  "author": "Thomas Spiessens",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spiessenst/todoapp/issues"
+  },
+  "homepage": "https://github.com/spiessenst/todoapp#readme"
+}

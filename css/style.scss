@@ -86,7 +86,7 @@ main {
     &--checked {
       text-decoration: line-through;
       text-decoration-color: $green;
-      text-decoration-thickness: 2px;
+      text-decoration-thickness: 1px;
 
       .list__item__button--check {
         &:before {
@@ -98,6 +98,9 @@ main {
 
     &__text {
       padding-left: 14px;
+      width: 75%;
+      text-align: justify;
+      word-wrap: break-word;
     }
     &__button {
       border: none;

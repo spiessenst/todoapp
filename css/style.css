@@ -272,7 +272,7 @@ main {
 .list__item--checked {
   text-decoration: line-through;
   text-decoration-color: #19ba99;
-  text-decoration-thickness: 2px;
+  text-decoration-thickness: 1px;
 }
 .list__item--checked .list__item__button--check:before {
   content: "\e003";
@@ -280,6 +280,9 @@ main {
 }
 .list__item__text {
   padding-left: 14px;
+  width: 75%;
+  text-align: justify;
+  word-wrap: break-word;
 }
 .list__item__button {
   border: none;
